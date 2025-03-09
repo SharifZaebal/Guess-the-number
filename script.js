@@ -15,6 +15,11 @@ attempt.textContent = 0;
 
 document.querySelector(".check").addEventListener("click", () => {
   const innerNumber = Number(document.querySelector(".guess").value);
+  
+  if (!innerNumber) {
+    return hint.textContent = 'Введите число'
+  }
+
   if (innerNumber >= 1 && innerNumber <= 20) {
     if (innerNumber != randomNumber) {
       attempt.textContent = Number(attempt.textContent) + 1
